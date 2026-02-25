@@ -63,6 +63,8 @@ VODER offers six distinct voice processing modes, each designed for specific aud
 | **TTM** | Text-to-Music Generation | Text | Audio |
 | **TTM+VC** | Text-to-Music + Voice Conversion | Text + Reference | Audio |
 
+**MSTS (Music-STS):** STS mode now supports musical inputs. When processing songs or musical audio, select "musical inputs?" to use the Seed-VC v1 model (44.1kHz) instead of the standard v2 model (22.05kHz), providing better voice conversion quality for music content.
+
 ---
 
 ### 🎭 **Dialogue System**
@@ -206,7 +208,8 @@ VODER is designed to maximize output quality rather than speed. Meeting the mini
 - **Voice Cloning:** Extract and replicate voice characteristics from reference audio samples
 - **Music Generation:** Lyrics-to-music synthesis with style control and voice conversion
 - **Cross-Modal Transformation:** Speech-to-speech, text-to-speech, and speech-to-text conversions
-- **Memory Optimisation:** TTM+VC pipeline now releases GPU memory between stages to reduce VRAM usage
+- **MSTS (Music-STS):** STS mode supports musical inputs using Seed-VC v1 at 44.1kHz for better music voice conversion
+- **Memory Optimisation:** Models are now explicitly offloaded after each operation to prevent memory accumulation in session-based workflows
 - **Background Music for Dialogue:** Automatically generated, duration‑fitted, volume‑controlled ambient music – a unique enhancement for narrated content
 
 ---
