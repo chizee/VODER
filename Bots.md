@@ -318,10 +318,12 @@ python src/voder.py tts+vc script "Character1: line1" "Character2: line2" target
 
 ### Speech‑to‑Speech / Voice Conversion (sts)
 
-Convert voice from base audio to target voice without changing content using Seed‑VC v2.
+Convert voice from base audio to target voice without changing content using Seed‑VC v2. **MSTS (Music-STS)**: For musical inputs, add the `music` keyword to use Seed‑VC v1 at 44.1kHz for better quality.
 
 ```bash
 python src/voder.py sts base "source_audio.wav" target "voice_reference.wav"
+
+python src/voder.py sts base "song.wav" target "voice_reference.wav" music
 ```
 
 **Parameters:**
@@ -330,14 +332,15 @@ python src/voder.py sts base "source_audio.wav" target "voice_reference.wav"
 |-----------|-------------|----------|
 | `base` | Path to source audio or video | Yes |
 | `target` | Path to target voice reference audio | Yes |
+| `music` | Use Seed-VC v1 (44.1kHz) for musical inputs | No |
 
 **Supported Input Formats:**
 - Audio: WAV, MP3, FLAC, OGG
 - Video: MP4, AVI, MOV, MKV (audio auto‑extracted)
 
-**Example:**
+**MSTS Example:**
 ```bash
-python src/voder.py sts base "presentation.mp4" target "voice_actor.wav"
+python src/voder.py sts base "presentation.mp4" target "voice_actor.wav" music
 ```
 
 ### Text‑to‑Music (ttm)
